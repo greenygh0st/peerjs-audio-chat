@@ -5,6 +5,8 @@ This is a barebones proof-of-concept WebRTC audio chat app built using [PeerJS](
 
 [Live demo](http://audiochat.noahburney.com/)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/greenygh0st/peerjs-audio-chat)
+
 -------------------------------
 ## How it works
 This app uses the new [WebRTC APIs](http://www.html5rocks.com/en/tutorials/webrtc/basics/) to connect directly to other users' browsers. Here's how it all works.
@@ -18,12 +20,12 @@ Here's what we're doing:
 ```javascript
 // handle browser prefixes
 navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
-  
+
 // Get access to microphone
 navigator.getUserMedia (
   // Only request audio
   {video: false, audio: true},
-    
+
   // Success callback
   function success(localAudioStream) {
     // Do something with audio stream
